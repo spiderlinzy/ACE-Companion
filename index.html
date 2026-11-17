@@ -4,13 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ACE Companion — Interactive Tools for AI Compliance Engineering</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%231d4ed8' d='M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3z'/%3E%3Cpath fill='%23fff' d='M10.8 14.6 8.2 12l-1.4 1.4 4 4 6.6-6.6L16 9.4z'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2316305e' d='M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3z'/%3E%3Cpath fill='%23fff' d='M10.8 14.6 8.2 12l-1.4 1.4 4 4 6.6-6.6L16 9.4z'/%3E%3C/svg%3E">
 <style>
 :root{
-  --l0:#7f1d1d; --l1:#b91c1c; --l2:#1d4ed8; --l3:#0f766e;
+  --l0:#7f1d1d; --l1:#b91c1c; --l2:#16305e; --l3:#2f5aa8;
   --amber:#b45309; --green:#15803d;
   --ink:#1e293b; --ink2:#475569; --muted:#64748b;
-  --bg:#f1f5f9; --soft:#f8fafc; --line:#e2e8f0; --navy:#1e293b;
+  --bg:#f1f5f9; --soft:#f8fafc; --line:#e2e8f0; --navy:#16305e;
+  --brand:#16305e; --brand-d:#0d1f3d; --gold:#c9a86a; --gold-d:#92743a;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -29,11 +30,22 @@ a{color:var(--l2)}
 .masthead .brand{display:flex; align-items:center; gap:12px; margin-bottom:14px}
 .masthead .brand svg{flex:0 0 auto}
 .masthead h1{color:#fff; font-size:30px; margin:0; letter-spacing:.3px}
-.masthead .kicker{font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#93c5fd; margin:0 0 6px}
+.masthead .kicker{font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#d8c391; margin:0 0 6px}
 .masthead .tagline{color:#cbd5e1; font-size:15.5px; max-width:760px; margin:0}
 .lang-switch{display:inline-flex; margin-top:18px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.22); border-radius:8px; padding:3px}
 .lang-switch button{border:0; background:transparent; color:#cbd5e1; padding:6px 16px; border-radius:6px; cursor:pointer; font-size:14px; font-family:inherit}
 .lang-switch button.active{background:#fff; color:var(--navy); font-weight:600}
+.hb-top{display:inline-flex; align-items:center; gap:8px; margin-top:18px; margin-left:10px;
+  background:rgba(201,168,106,.18); border:1px solid rgba(201,168,106,.65); color:#f0e2c0;
+  text-decoration:none; font-size:13.5px; font-weight:700; padding:8px 16px; border-radius:8px}
+.hb-top:hover{background:rgba(201,168,106,.32); color:#fff}
+.hb-banner{display:flex; align-items:center; justify-content:space-between; gap:14px; margin-top:16px;
+  background:#fff; border:1px solid #e6dcc2; border-left:4px solid #c9a86a; border-radius:10px;
+  padding:13px 18px; text-decoration:none; color:var(--ink)}
+.hb-banner:hover{box-shadow:0 6px 18px rgba(15,23,42,.08)}
+.hb-banner .hb-t{font-size:14px; font-weight:700; color:var(--navy)}
+.hb-banner .hb-d{font-size:13px; color:var(--ink2); margin-top:2px}
+.hb-banner .hb-go{flex:0 0 auto; font-weight:800; color:var(--l2); font-size:14px}
 
 /* ---------- Intro ---------- */
 .intro{padding:34px 0 6px}
@@ -57,9 +69,9 @@ a{color:var(--l2)}
   border-radius:8px; padding:9px 11px; margin-bottom:16px}
 .tc-btn{margin-top:auto; display:inline-flex; align-items:center; justify-content:center; gap:8px;
   text-decoration:none; font-weight:700; font-size:14px; padding:11px 14px; border-radius:9px; color:#fff}
-.c-teal .tc-btn{background:var(--l3)} .c-teal .tc-btn:hover{background:#0d5d56}
-.c-blue .tc-btn{background:var(--l2)} .c-blue .tc-btn:hover{background:#1e40af}
-.c-amber .tc-btn{background:var(--amber)} .c-amber .tc-btn:hover{background:#92400e}
+.c-teal .tc-btn{background:var(--l3)} .c-teal .tc-btn:hover{background:#244a8c}
+.c-blue .tc-btn{background:var(--l2)} .c-blue .tc-btn:hover{background:var(--brand-d)}
+.c-amber .tc-btn{background:var(--gold);color:#16305e} .c-amber .tc-btn:hover{background:#b8955a;color:#16305e}
 .tc-btn svg{width:16px; height:16px}
 
 /* ---------- About the book ---------- */
@@ -75,9 +87,9 @@ a{color:var(--l2)}
 .ab-body{font-size:13.5px; color:var(--ink2); margin:0 0 8px; line-height:1.65}
 .ab-meta{display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-top:16px}
 .isbn{font-size:13px; font-weight:700; color:var(--ink2); font-family:ui-monospace,Consolas,monospace}
-.ab-buy{display:inline-flex; align-items:center; gap:8px; background:#2563eb; color:#fff; font-weight:700;
+.ab-buy{display:inline-flex; align-items:center; gap:8px; background:#c9a86a; color:#16305e; font-weight:800;
   padding:10px 18px; border-radius:9px; text-decoration:none; font-size:14px}
-.ab-buy:hover{background:#1d4ed8}
+.ab-buy:hover{background:#b8955a}
 .ab-buy svg{width:16px; height:16px}
 
 /* ---------- Footer ---------- */
@@ -102,7 +114,7 @@ footer .f-disc{font-size:12.5px; color:#94a3b8; margin:0}
 <header class="masthead">
   <div class="wrap">
     <div class="brand">
-      <svg width="38" height="38" viewBox="0 0 24 24" aria-hidden="true"><path fill="#3b82f6" d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3z"/><path fill="#fff" d="M10.8 14.6 8.2 12l-1.4 1.4 4 4 6.6-6.6L16 9.4z"/></svg>
+      <svg width="38" height="38" viewBox="0 0 24 24" aria-hidden="true"><path fill="#c9a86a" d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3z"/><path fill="#fff" d="M10.8 14.6 8.2 12l-1.4 1.4 4 4 6.6-6.6L16 9.4z"/></svg>
       <div>
         <p class="kicker" data-i18n="kicker">Companion to the book</p>
         <h1>ACE Companion</h1>
@@ -113,6 +125,10 @@ footer .f-disc{font-size:12.5px; color:#94a3b8; margin:0}
       <button data-lang="en" class="active">EN</button>
       <button data-lang="zh">中文</button>
     </div>
+    <a class="hb-top" href="handbook/index.html" data-hb-link data-hb-base="handbook/index.html">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z" stroke="#f0e2c0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 19a2 2 0 0 1 2-2h13" stroke="#f0e2c0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span data-i18n="hbTop">Handbook</span>
+    </a>
   </div>
 </header>
 
@@ -120,6 +136,13 @@ footer .f-disc{font-size:12.5px; color:#94a3b8; margin:0}
 <section class="intro">
   <p class="lead" data-i18n="introLead" data-html>This is the companion site to the book <em>AI Compliance Engineering: From Regulation to Evidence</em>. Instead of asking you to take the method on trust, it is implemented three ways — so you can see the same regulation-to-evidence chain working as real code, as an interactive assessment, and as a full enterprise case study.</p>
   <p class="sub" data-i18n="introSub">Each card states which part of the book it demonstrates. Open any one in a new tab and explore; the full methodology and every figure still live in the book itself.</p>
+  <a class="hb-banner" href="handbook/index.html" data-hb-link data-hb-base="handbook/index.html">
+    <span>
+      <span class="hb-t" data-i18n="hbBannerT">Methodology Handbook</span>
+      <span class="hb-d" style="display:block" data-i18n="hbBannerD">Regulation–evidence maps, OWASP LLM crosswalk, evidence templates, compliance checklist, verification methods and glossary — the book's method skeleton.</span>
+    </span>
+    <span class="hb-go" data-i18n="hbGo">Open handbook →</span>
+  </a>
 </section>
 <section class="tool-grid">
   <article class="tool-card c-teal">
@@ -189,7 +212,7 @@ footer .f-disc{font-size:12.5px; color:#94a3b8; margin:0}
   </div>
 </footer>
 <script>
-let lang="en";
+let lang=(function(){try{return localStorage.getItem("ace-lang")==="zh"?"zh":"en";}catch(e){return "en";}})();
 const I18N={
 en:{
   kicker:"Companion to the book",
@@ -211,7 +234,11 @@ en:{
   aboutBody1:"As large-language-model systems spread rapidly across industries and regulatory frameworks like the EU AI Act take effect, compliance has shifted from a theoretical principle to an enforceable engineering obligation for high-risk AI deployments. Yet a persistent gap divides regulatory text, technical practice, and organisational decision-making: legal teams can interpret rules but cannot translate them into system architecture; engineering teams build powerful models but struggle to align technical choices with compliance mandates; leadership receives only vague, qualitative risk assessments with no auditable trail of evidence.",
   aboutBody2:"Rooted in the EU AI Act and calibrated for global digital governance trends, <em>AI Compliance Engineering</em> delivers a practice-oriented methodology to turn abstract regulatory obligations into concrete technical controls, and generate traceable, auditable evidence to verify their effectiveness. It presents the CTF Compliance Translation Framework, the RCE Risk-Control-Evidence closed loop, and the original PTB/FTH trust boundary models built for generative AI risks — covering data governance, prompt-injection defence, RAG security, hallucination mitigation, runtime monitoring and full-lifecycle auditing — with actionable checklists, testing workflows and implementation roadmaps for AI engineers, compliance officers, risk teams and legal practitioners.",
   buyBtn:"Get it on Amazon",
-  footDisc:"Illustrative engineering material. All organizations, data, test results and metrics are synthetic and simulated for demonstration purposes; they do not represent any real organization or experimental finding. The full methodology and data appear in the book."
+  footDisc:"Illustrative engineering material. All organizations, data, test results and metrics are synthetic and simulated for demonstration purposes; they do not represent any real organization or experimental finding. The full methodology and data appear in the book.",
+  hbTop:"Handbook",
+  hbBannerT:"Methodology Handbook",
+  hbBannerD:"Regulation–evidence maps, OWASP LLM crosswalk, evidence templates, compliance checklist, verification methods and glossary — the book's method skeleton.",
+  hbGo:"Open handbook →"
 },
 zh:{
   kicker:"书籍配套网页",
@@ -229,11 +256,15 @@ zh:{
   t3desc:"一家金融科技公司合规企业级 RAG 助手的完整案例——从数据源、风险分级、控制矩阵到测试指标、事件闭环和有条件批准，每一步都留下可审计证据。",
   t3facts:"7 个区块 · 12 项控制 · 7 项指标全 Pass · 3 起事件闭环", t3btn:"打开案例",
   aboutTitle:"关于这本书",
-  aboutBio:"朱芝萱（ZhiXuan ZHU）是一名研究与实践并行的从业者，工作在人工智能工程、安全与治理的交叉领域，专注于大模型风险管理，以及在 AI 系统全生命周期内构建可信系统所需的实际控制。",
+  aboutBio:"ZhiXuan ZHU 是一名研究与实践并行的从业者，工作在人工智能工程、安全与治理的交叉领域，专注于大模型风险管理，以及在 AI 系统全生命周期内构建可信系统所需的实际控制。",
   aboutBody1:"随着大语言模型系统在各行业快速普及、欧盟《人工智能法案》等监管框架相继生效，合规已从一项理论原则，转变为高风险 AI 部署中可强制执行的工程义务。然而，法规文本、技术实践与组织决策之间始终存在一道鸿沟：法务团队能解读规则，却无法把规则转化为系统架构；工程团队能构建强大的模型，却难以让技术选择与合规要求对齐；管理层收到的只是模糊、定性的风险评估，没有可审计的证据轨迹。",
   aboutBody2:"本书立足欧盟 AI 法案、并结合全球数字治理趋势，提供一套面向实践的方法论，把抽象的法规义务转化为具体的技术控制，并生成可追溯、可审计的证据以验证其有效性。书中提出 CTF 合规转化框架、RCE 风险—控制—证据闭环，以及专为生成式 AI 风险构建的原创 PTB/FTH 信任边界模型，覆盖数据治理、提示注入防御、RAG 安全、幻觉缓解、运行时监控与全生命周期审计，并为 AI 工程师、合规官、风险团队与法律从业者提供可落地的检查清单、测试工作流与实施路线图。",
   buyBtn:"在亚马逊购买",
-  footDisc:"本页为说明性工程材料。所有组织名称、数据、测试结果与指标均为合成和模拟，用于演示，不代表任何真实组织或实验发现。完整方法论与数据见书。"
+  footDisc:"本页为说明性工程材料。所有组织名称、数据、测试结果与指标均为合成和模拟，用于演示，不代表任何真实组织或实验发现。完整方法论与数据见书。",
+  hbTop:"方法手册",
+  hbBannerT:"方法手册",
+  hbBannerD:"法规—证据映射、OWASP LLM 交叉表、证据模板、合规自查清单、验证方法与术语表，系统整理全书方法骨架。",
+  hbGo:"进入手册 →"
 }
 };
 function applyLang(){
@@ -245,12 +276,16 @@ function applyLang(){
       else el.textContent=v;
     }
   });
+  document.querySelectorAll("[data-hb-link]").forEach(function(a){
+    const base=a.getAttribute("data-hb-base");
+    if(base) a.setAttribute("href", base+(lang==="en"?"#/en/":"#/"));
+  });
   document.querySelectorAll(".lang-switch button").forEach(function(b){
     b.classList.toggle("active", b.getAttribute("data-lang")===lang);
   });
 }
 document.querySelectorAll(".lang-switch button").forEach(function(b){
-  b.addEventListener("click", function(){ lang=b.getAttribute("data-lang"); applyLang(); });
+  b.addEventListener("click", function(){ lang=b.getAttribute("data-lang"); try{localStorage.setItem("ace-lang",lang);}catch(e){} applyLang(); });
 });
 applyLang();
 </script>
